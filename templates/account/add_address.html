@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block content %}
+
+      <div class="container py-5">
+        <div class="col-md-8 offset-2">
+
+        <h1 class="mb-5">Tambah Alamat Baru</h1>
+        
+        
+        <div class="card mb-4" id="forms">
+          <div class="card-header">
+            <small>
+              Dengan akun ini, Anda dapat menghemat waktu selama pembayaran, mengakses tas belanja Anda dari perangkat apa pun, dan melihat riwayat pesanan Anda.
+            </small>
+          </div>
+          <div class="card-body">
+
+            {% include 'partials/_messages.html' %}
+
+            <form method="post" action="">
+              <fieldset>
+                {% csrf_token %}
+
+                {% for fm in form %}
+                    <div class="form-group">
+                        {{fm.label_tag}}
+                        {{fm}}
+                        <small class="text-danger">{{fm.errors|striptags}}</small>
+                    </div>
+                {% endfor %}
+                <form action="#"> 
+
+                  <label for="city">Kabupaten / Kota Tujuan Pengantaran:   </label>
+                  <br>
+                  <select name="city" id="city">
+                    <option value="Samarinda Kota">Samarinda Kota</option>
+                    <option value="Samarinda Ulu">Samarinda Ulu</option>
+                    <option value="Samarinda Seberang">Samarinda Seberang</option>
+                    <option value="Samarinda Utara">Samarinda Utara</option>
+                    <option value="Sambutan">Sambutan</option>
+                    <option value="Palaran">Palaran</option>
+                    <option value="Loa Janan Ilir">Loa Janan Ilir</option>
+                  </select>
+                  <br><br><br>
+                <input type="submit" value="submit"/>
+                
+              </form>
+              </fieldset>
+
+              {% if form.non_field_errors %}
+                {% for error in non_field_errors %}
+                    <p class="alert alert-danger my-3">
+                        {{error}}
+                    </p>
+                {% endfor %}
+              {% endif %}
+
+            </form>
+
+            
+          </div>
+        </div>
+
+        </div>       
+      </div>
+{% endblock content %}

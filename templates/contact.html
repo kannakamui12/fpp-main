@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block content %}
+    <!--Section: Contact v.2-->
+    <div class="container">
+<section class="mb-4">
+
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Hubungi Kami</h2>
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">Apakah Anda memiliki pertanyaan? Harap jangan ragu untuk menghubungi kami secara langsung. Tim kami akan kembali kepada Anda di dalam
+        hitungan jam untuk membantu Anda.</p>
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form action="{% url 'store:contact' %}" name="contact-form" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!--Grid row-->
+                <div class="row">
+
+                    
+                    <!--Grid column-->
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <label for="name" class="">Nama Anda</label>
+                            <input type="text" id="name" name="fname" class="form-control">
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <label for="address" class="">Email Anda</label>
+                            <input type="text" id="email" name="email" class="form-control">
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <label for="phone" class="">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <label for="message">Pesan Anda</label>
+                            <textarea type="text" id="message" name="message" rows="5" class="form-control md-textarea"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+                <button type="submit" class ="btn btn-primary mb-md-5" onclick="myFunction()">Kirim</button>
+                <script>
+                function myFunction() {
+                alert("Thanks For Contact Us, We will reply immediately.");
+                }
+                </script>
+
+            </form>
+            <div class="status"></div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>Jl. Ir.Sutami, Kompleks Pergudangan Blok O no.10 , Samarinda</p>
+                </li>
+
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>+62 1234 567 891</p>
+                </li>
+
+                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p>pt.fresmon@gmail.com</p>
+                </li>
+            </ul>
+        </div>
+        <!--Grid column-->
+
+    </div>
+</div>
+
+</section>
+<!--Section: Contact v.2-->
+
+{% endblock content %}

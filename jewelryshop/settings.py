@@ -24,6 +24,7 @@ CORS_ORIGIN_WHITELIST = [
     'https://katalogonlinefp.my.id',
 ]
 CSRF_TRUSTED_ORIGINS = ['https://katalogonlinefp.my.id', 'http://katalogonlinefp.my.id']
+CSRF_USE_SESSIONS=True
 
 
 # Application definition

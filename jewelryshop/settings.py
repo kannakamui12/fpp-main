@@ -20,6 +20,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
+CORS_ORIGIN_WHITELIST = [
+    'https://katalogonlinefp.my.id',
+]
 
 
 # Application definition

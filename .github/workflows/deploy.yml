@@ -1,0 +1,26 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remote connecting to server using SSH, then build and deploy the dockerize project
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          script: |
+            cd ~/fresmon/
+            git pull origin main
+            sudo docker build -t fresmon .
+            sudo docker stop fresmon
+            sudo docker rm fresmon
+            sudo docker run -d -p 8000:8000 --name fresmon fresmon
+            sudo docker image prune -f
+            sudo docker builder prune -f

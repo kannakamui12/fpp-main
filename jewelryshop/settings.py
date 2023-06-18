@@ -23,6 +23,7 @@ SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
 CORS_ORIGIN_WHITELIST = [
     'https://katalogonlinefp.my.id',
 ]
+CSRF_TRUSTED_ORIGINS = ['https://katalogonlinefp.my.id', 'http://katalogonlinefp.my.id']
 
 
 # Application definition
@@ -120,7 +121,7 @@ USE_THOUSAND_SEPARATOR = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'jewelryshop/static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, '/static')]
 # Automatically Created on Production
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 

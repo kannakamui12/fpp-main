@@ -25,6 +25,7 @@ CORS_ORIGIN_WHITELIST = [
 ]
 CSRF_TRUSTED_ORIGINS = ['https://katalogonlinefp.my.id', 'http://katalogonlinefp.my.id']
 CSRF_USE_SESSIONS=True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition

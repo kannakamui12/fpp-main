@@ -52,7 +52,7 @@ class Product(models.Model):
     title = models.CharField(max_length=150, verbose_name="Product Title")
     slug = models.SlugField(max_length=160, verbose_name="Product Slug")
     sku = models.CharField(max_length=3, unique=True,
-                           verbose_name="stock")
+                           verbose_name="sku")
     short_description = models.TextField(verbose_name="Short Description")
     detail_description = models.TextField(
         blank=True, null=True, verbose_name="Detail Description")
